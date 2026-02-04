@@ -1,3 +1,4 @@
+import Footer from "@/components/modules/layout/footer/Footer";
 import Navbar from "@/components/modules/layout/Navbar/Navbar";
 
 const UserLayout = async ({ children }: { children: React.ReactNode }) => {
@@ -10,7 +11,7 @@ const UserLayout = async ({ children }: { children: React.ReactNode }) => {
       >
         {children}
       </div>
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 };
