@@ -12,13 +12,13 @@ const SectionHeader = ({
       </div>
 
       {/* Title */}
-      <h2 className="relative text-2xl md:text-4xl font-extrabold bg-clip-text text-transparent bg-linear-to-r from-primary to-secondary animate-gradient-x">
+      <h2 className="relative text-2xl md:text-3xl font-bold bg-clip-text text-transparent bg-linear-to-r from-primary to-secondary animate-gradient-x">
         {title}
       </h2>
 
       {/* Subtitle */}
       {subtitle && (
-        <p className="mt-2 text-gray-500 dark:text-gray-400 text-xs md:text-base">
+        <p className="mt-1 text-gray-500 dark:text-gray-400 text-xs ">
           {subtitle}
         </p>
       )}

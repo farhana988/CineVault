@@ -4,12 +4,33 @@ export interface Movie {
   poster_path: string;
   release_date: string;
   vote_average: number;
+  genre_ids?: number[];
+  popularity?: number;
 }
-
+export type MovieCardProps = {
+  title: string;
+  posterPath: string;
+  rating: number;
+  releaseDate?: string;
+  onClick?: () => void;
+};
 export interface MovieProps {
   results: Movie[];
-  movies: Movie[];
 }
 export interface TopRatedProps {
   movies: Movie[];
+}
+
+export interface Genre {
+  id: number;
+  name: string;
+}
+
+export interface MoviesByGenre {
+  genre: Genre;
+  movies: Movie[];
+}
+
+export interface PopularProps {
+  moviesByGenre: MoviesByGenre[];
 }

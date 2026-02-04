@@ -10,7 +10,7 @@ import { useMenuToggle } from "@/components/hooks/useMenuToggle";
 const Navbar = () => {
   const { isMenuOpen, toggleMenu, closeMenu } = useMenuToggle();
   return (
-    <header className="fixed w-full top-0 z-50 bg-background">
+    <header className="fixed w-full top-0 z-50 bg-background py-2">
       <div className="max-w-7xl xl:mx-auto">
         <nav className="pl-5 xl:pl-8 pr-2 xl:pr-4 relative ">
           <div className="flex justify-between items-center relative ">
