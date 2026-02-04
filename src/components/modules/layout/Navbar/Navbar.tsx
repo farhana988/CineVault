@@ -10,19 +10,16 @@ import { useMenuToggle } from "@/components/hooks/useMenuToggle";
 const Navbar = () => {
   const { isMenuOpen, toggleMenu, closeMenu } = useMenuToggle();
   return (
-    <header className="fixed w-full top-1.5 z-50 ">
-      <div className="max-w-7xl xl:mx-auto bg-custom-secondary text-snow-white rounded-full mx-2">
+    <header className="fixed w-full top-0 z-50 bg-background">
+      <div className="max-w-7xl xl:mx-auto">
         <nav className="pl-5 xl:pl-8 pr-2 xl:pr-4 relative ">
-          <div className="flex justify-between items-center py-2  relative">
+          <div className="flex justify-between items-center relative ">
             {/*  logo  */}
             <div className="hidden lg:block ">
               <Logo />
             </div>
             {/* Links */}
-            <div
-              className="flex items-center space-x-3 
-            "
-            >
+            <div className="flex items-center space-x-3">
               <Hamburger isOpen={isMenuOpen} toggleMenu={toggleMenu} />
               <div className="lg:hidden">
                 <Logo />

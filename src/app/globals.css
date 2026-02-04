@@ -126,7 +126,8 @@
   --popover-foreground: #111827;
 
   /* Vault Gold – Primary */
-  --primary: #d4a017;
+  /* --primary: #d4a017; */
+  --primary: #e6b65c;
   --primary-foreground: #111827;
 
   /* Cinematic Teal – Secondary */
@@ -218,4 +219,19 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+@keyframes gradient-x {
+  0%,
+  100% {
+    background-position: 0%;
+  }
+  50% {
+    background-position: 100%;
+  }
+}
+
+.animate-gradient-x {
+  background-size: 200% 100%;
+  animation: gradient-x 4s ease infinite;
 }

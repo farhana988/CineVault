@@ -5,13 +5,8 @@ const AuthButton = () => {
   return (
     <Link href="/login">
       <Button
-        className="
-          font-semibold
-          text-black
-          bg-[linear-gradient(135deg,var(--secondary-foreground),var(--secondary),var(--muted-foreground))]
-          hover:opacity-90
-          transition
-        "
+        className="font-semibold hover:opacity-90 transition  text-black
+          bg-[linear-gradient(135deg,var(--secondary-foreground),var(--secondary),var(--muted-foreground))]"
       >
         Login
       </Button>
