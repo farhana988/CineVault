@@ -12,7 +12,7 @@ const MovieCard = ({
   return (
     <div
       onClick={onClick}
-      className="bg-card rounded-lg overflow-hidden shadow-md shadow-primary/10
+      className="bg-card rounded-lg overflow-hidden shadow-md shadow-primary/10 max-h-80
       hover:shadow-lg hover:scale-[1.03] transition-transform cursor-pointer relative"
     >
       {/* Rating badge */}
@@ -34,6 +34,7 @@ const MovieCard = ({
           src={`https://image.tmdb.org/t/p/w500${posterPath}`}
           alt={title}
           fill
+          sizes="(max-width: 768px) 100vw, 33vw"
           className="object-cover"
         />
       </div>

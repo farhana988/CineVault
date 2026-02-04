@@ -30,6 +30,9 @@ export interface MoviesByGenre {
   genre: Genre;
   movies: Movie[];
 }
+export interface GenreTabsProps {
+  moviesByGenre: MoviesByGenre[];
+}
 
 export interface PopularProps {
   moviesByGenre: MoviesByGenre[];

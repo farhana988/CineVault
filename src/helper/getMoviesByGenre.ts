@@ -20,5 +20,5 @@ export const getMoviesByGenre = async (): Promise<MoviesByGenre[]> => {
     return { genre, movies: filtered };
   });
 
-  return moviesByGenre.filter((item) => item.movies.length > 0);
+  return moviesByGenre;
 };
