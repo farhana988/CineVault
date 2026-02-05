@@ -13,7 +13,6 @@ const NavLinks = ({ isMobile = false, onLinkClick }: MenuLinksProps) => {
     <>
       {menuLinks.map(({ href, label }) => {
         const isActive = pathname === href;
-
         return (
           <Link
             key={href}

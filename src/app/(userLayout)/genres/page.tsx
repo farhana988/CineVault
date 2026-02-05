@@ -1,17 +1,17 @@
 import GenreTabs from "@/components/modules/genre/GenreTabs";
 import SectionHeader from "@/components/shared/SectionHeader";
-
-import { getMoviesByGenre } from "@/helper/getMoviesByGenre";
+import { getallMoviesByGenre } from "@/helper/getAllMoviesByGenre";
 
 const GenrePage = async () => {
-  const moviesByGenre = await getMoviesByGenre();
+  const allMoviesByGenre = await getallMoviesByGenre();
+  // console.log(allMoviesByGenre);
   return (
     <>
       <SectionHeader
         title="Browse by Genre"
         subtitle="Explore movies based on your favorite genres"
       />
-      <GenreTabs moviesByGenre={moviesByGenre} />
+      <GenreTabs moviesByGenre={allMoviesByGenre} />
     </>
   );
 };

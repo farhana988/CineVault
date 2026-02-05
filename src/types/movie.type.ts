@@ -37,3 +37,10 @@ export interface GenreTabsProps {
 export interface PopularProps {
   moviesByGenre: MoviesByGenre[];
 }
+export type MovieSortOption =
+  | "popularity"
+  | "release_date"
+  | "vote_average"
+  | "title";
+
+export type SortOrder = "asc" | "desc";

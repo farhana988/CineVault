@@ -1,11 +1,12 @@
 "use client";
-import Hamburger from "./Hamburger";
+
+import { useMenuToggle } from "@/components/hooks/useMenuToggle";
 import Logo from "./Logo";
+import Hamburger from "./Hamburger";
 import NavLinks from "./NavLinks";
 import ThemeToggle from "@/components/shared/ThemeToggle";
 import AuthButton from "./AuthButton";
 import MobileMenu from "./MobileMenu";
-import { useMenuToggle } from "@/components/hooks/useMenuToggle";
 
 const Navbar = () => {
   const { isMenuOpen, toggleMenu, closeMenu } = useMenuToggle();

@@ -7,6 +7,9 @@ export async function tmdbFetch<T>(endpoint: string) {
   );
 
   if (!res.ok) {
+    const error = await res.text();
+    console.error("TMDB STATUS:", res.status);
+    console.error("TMDB RESPONSE:", error);
     throw new Error("TMDB API Error");
   }
 
