@@ -4,11 +4,11 @@ import {
   isMovieWatchLater,
   toggleWatchLaterMovie,
 } from "@/helper/watchLater";
-import { WatchLaterMovie, MovieCardProps } from "@/types/movie.type";
+import { Movie, MovieCardProps } from "@/types/movie.type";
 import { toast } from "sonner";
 
 export const useWatchLaterMovies = () => {
-  const [movies, setMovies] = useState<WatchLaterMovie[]>([]);
+  const [movies, setMovies] = useState<Movie[]>([]);
 
   const loadMovies = useCallback(() => {
     setTimeout(() => {

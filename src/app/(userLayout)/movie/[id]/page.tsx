@@ -1,3 +1,4 @@
+import RecentlyViewedTracker from "@/components/modules/RecentlyViewed/RecentlyViewedTracker";
 import { tmdbFetch } from "@/lib/tmdb";
 import { Movie } from "@/types/movie.type";
 import Image from "next/image";
@@ -13,6 +14,7 @@ const MovieDetailsPage = async ({
   console.log(movie);
   return (
     <div className="">
+      <RecentlyViewedTracker movie={movie} />
       <div className="grid md:grid-cols-3 gap-8">
         {/* Poster */}
         <div>

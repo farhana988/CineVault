@@ -23,7 +23,9 @@ export interface MovieProps {
 export interface TopRatedProps {
   movies: Movie[];
 }
-
+export interface RecentlyViewedMoviesProps {
+  movie: Movie;
+}
 export interface Genre {
   id: number;
   name: string;
@@ -47,11 +49,3 @@ export type MovieSortOption =
   | "title";
 
 export type SortOrder = "asc" | "desc";
-
-export type WatchLaterMovie = {
-  id: number;
-  title: string;
-  posterPath: string;
-  rating: number;
-  releaseDate?: string;
-};

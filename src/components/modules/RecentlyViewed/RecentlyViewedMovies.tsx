@@ -1,14 +1,17 @@
 "use client";
 
+import { useState } from "react";
+import { Movie } from "@/types/movie.type";
+import { getRecentlyViewedMovies } from "@/helper/getRecentlyViewedMovies";
 import MovieCard from "@/components/cards/MovieCard";
-import { useWatchLaterMovies } from "@/components/hooks/useWatchLaterMovies";
-const WatchLaterMovies = () => {
-  const { movies } = useWatchLaterMovies();
+
+const RecentlyViewedMovies = () => {
+  const [movies] = useState<Movie[]>(() => getRecentlyViewedMovies());
   return (
     <div>
       {movies.length === 0 ? (
         <div className="p-4 text-center text-muted-foreground">
-          No movies in your Watch Later list.
+          You haven’t viewed any movies yet.
         </div>
       ) : (
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
@@ -28,4 +31,4 @@ const WatchLaterMovies = () => {
   );
 };
 
-export default WatchLaterMovies;
+export default RecentlyViewedMovies;
