@@ -3,11 +3,10 @@ import Link from "next/link";
 
 const Logo = () => {
   return (
-    <Link
-      href={"/"}
-      className={`text-2xl font-medium flex items-center leading-tight text-primary`}
-    >
-      <Image src={"/images/logo.png"} width={80} height={80} alt="" />
+    <Link href={"/"}>
+      <div className="relative w-14 h-14 lg:w-16 lg:h-16 pt-1.5">
+        <Image src="/images/logo.png" alt="logo" width={80} height={80} />
+      </div>
     </Link>
   );
 };

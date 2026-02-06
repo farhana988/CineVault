@@ -12,35 +12,37 @@ const Popular = async () => {
         title="Popular Movies"
         subtitle="Discover what’s trending and most watched right now"
       />
-      {moviesByGenre
-        .filter(({ movies }) => movies.length > 0)
-        .map(({ genre, movies }) => (
-          <section key={genre.id}>
-            <div className="flex items-center mb-7 gap-0 relative">
-              <Bookmark
-                size={40}
-                className="absolute top-0 -left-2 text-primary fill-primary stroke-primary"
-              />
-
-              <h2 className="relative left-5 top-1 px-3 text-xl font-semibold rounded-r-xl border-t-2 border-primary/80 ">
-                {genre.name}
-              </h2>
-            </div>
-
-            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4">
-              {movies.map((movie) => (
-                <MovieCard
-                  id={movie.id}
-                  key={movie.id}
-                  title={movie.title}
-                  posterPath={movie.poster_path}
-                  rating={movie.vote_average}
-                  releaseDate={movie.release_date}
+      <div className="space-y-6 md:space-y-10">
+        {moviesByGenre
+          .filter(({ movies }) => movies.length > 0)
+          .map(({ genre, movies }) => (
+            <section key={genre.id}>
+              <div className="flex items-center mb-7 gap-0 relative">
+                <Bookmark
+                  size={40}
+                  className="absolute top-0 -left-2 text-primary fill-primary stroke-primary"
                 />
-              ))}
-            </div>
-          </section>
-        ))}
+
+                <h2 className="relative left-5 top-1 px-3 text-xl font-semibold rounded-r-xl border-t-2 border-primary/80 ">
+                  {genre.name}
+                </h2>
+              </div>
+
+              <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4">
+                {movies.map((movie) => (
+                  <MovieCard
+                    id={movie.id}
+                    key={movie.id}
+                    title={movie.title}
+                    posterPath={movie.poster_path}
+                    rating={movie.vote_average}
+                    releaseDate={movie.release_date}
+                  />
+                ))}
+              </div>
+            </section>
+          ))}
+      </div>
     </>
   );
 };
