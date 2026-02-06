@@ -46,6 +46,7 @@ const TopRated = ({ movies }: TopRatedProps) => {
                 ${index % 2 === 0 ? "translate-y-0" : "translate-y-10"} transition-transform`}
             >
               <MovieCard
+                id={movie.id}
                 title={movie.title}
                 posterPath={movie.poster_path}
                 rating={movie.vote_average}

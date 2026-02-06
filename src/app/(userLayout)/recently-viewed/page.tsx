@@ -1,7 +1,5 @@
-import React from "react";
-
 const RecentlyViewedPage = () => {
-  return <div>RecentlyViewedPage RecentlyViewedPage</div>;
+  return <div className="p-4"></div>;
 };
 
 export default RecentlyViewedPage;

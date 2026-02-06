@@ -8,11 +8,14 @@ export interface Movie {
   popularity?: number;
 }
 export type MovieCardProps = {
+  id: number;
   title: string;
   posterPath: string;
   rating: number;
   releaseDate?: string;
   onClick?: () => void;
+  isWatchLater?: boolean;
+  onToggleWatchLater?: () => void;
 };
 export interface MovieProps {
   results: Movie[];
@@ -44,3 +47,11 @@ export type MovieSortOption =
   | "title";
 
 export type SortOrder = "asc" | "desc";
+
+export type WatchLaterMovie = {
+  id: number;
+  title: string;
+  posterPath: string;
+  rating: number;
+  releaseDate?: string;
+};

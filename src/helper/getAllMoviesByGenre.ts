@@ -7,7 +7,7 @@ export const getallMoviesByGenre = async (): Promise<MoviesByGenre[]> => {
 
   const genres = genreData.genres;
   const movies = allMovieData.results;
-  console.log(movies);
+  // console.log(movies);
   const allMoviesByGenre: MoviesByGenre[] = genres.map((genre) => {
     const filtered = movies
       .filter(

@@ -67,6 +67,7 @@ const GenreTabs = ({ moviesByGenre }: GenreTabsProps) => {
         <div className="flex-1 grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4">
           {selectedGenre?.movies.map((movie) => (
             <MovieCard
+              id={movie.id}
               key={movie.id}
               title={movie.title}
               posterPath={movie.poster_path}

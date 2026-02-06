@@ -1,16 +1,37 @@
+"use client";
 import Image from "next/image";
-import { Star } from "lucide-react";
+import { Minus, Plus, Star } from "lucide-react";
 import { MovieCardProps } from "@/types/movie.type";
 import Link from "next/link";
+import { Bookmark } from "lucide-react";
+import { useWatchLaterMovies } from "../hooks/useWatchLaterMovies";
 
 const MovieCard = ({
+  id,
   title,
   posterPath,
   rating,
   releaseDate,
 }: MovieCardProps) => {
+  const { toggleMovie, checkMovie } = useWatchLaterMovies();
+
+  const isWatchLater = checkMovie(id);
+
+  const handleBookmark = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+
+    toggleMovie({
+      id,
+      title,
+      posterPath,
+      rating,
+      releaseDate,
+    });
+  };
+
   return (
-    <Link href={`/`}>
+    <Link href={`/movie/${id}`}>
       <div
         className="bg-card rounded-lg overflow-hidden shadow-md shadow-primary/10 max-h-80
       hover:shadow-lg hover:scale-[1.03] transition-transform cursor-pointer relative"
@@ -53,6 +74,23 @@ const MovieCard = ({
             </p>
           )}
         </div>
+        <button
+          onClick={handleBookmark}
+          className="mt-2 absolute -top-3.5 -right-2.5"
+        >
+          <Bookmark
+            size={50}
+            className={
+              isWatchLater
+                ? "text-primary fill-current"
+                : "text-primary fill-current"
+            }
+          />
+
+          <span className="text-black absolute inset-0 flex items-center justify-center pointer-events-none">
+            {isWatchLater ? <Minus size={20} /> : <Plus size={20} />}
+          </span>
+        </button>
       </div>
     </Link>
   );

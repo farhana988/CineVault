@@ -25,11 +25,10 @@ export const SortButtons = ({
 }: SortButtonsProps) => {
   const handleClick = (sortBy: MovieSortOption) => {
     if (active === sortBy) {
-      // toggle order
       onOrderChange(order === "asc" ? "desc" : "asc");
     } else {
       onChange(sortBy);
-      onOrderChange("desc"); // default new sort to descending
+      onOrderChange("desc");
     }
   };
 
