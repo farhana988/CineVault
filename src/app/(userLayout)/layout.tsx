@@ -1,5 +1,5 @@
 import Footer from "@/components/modules/layout/footer/Footer";
-import Navbar from "@/components/modules/layout/navbar/Navbar";
+import Navbar from "@/components/modules/layout/nav/Navbar";
 
 const UserLayout = async ({ children }: { children: React.ReactNode }) => {
   return (
