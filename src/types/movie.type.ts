@@ -6,6 +6,27 @@ export interface Movie {
   vote_average: number;
   genre_ids?: number[];
   popularity?: number;
+  overview?: string;
+  tagline?: string;
+  vote_count?: number;
+  runtime?: number;
+  budget?: number;
+  revenue?: number;
+  status?: string;
+  original_language?: string;
+  genres?: Genre[];
+  production_countries?: ProductionCountry[];
+  spoken_languages?: SpokenLanguage[];
+}
+export interface ProductionCountry {
+  iso_3166_1: string;
+  name: string;
+}
+
+export interface SpokenLanguage {
+  iso_639_1: string;
+  english_name: string;
+  name: string;
 }
 export type MovieCardProps = {
   id: number;
@@ -23,8 +44,14 @@ export interface MovieProps {
 export interface TopRatedProps {
   movies: Movie[];
 }
+export interface MovieDetailsProps {
+  movie: Movie;
+}
 export interface RecentlyViewedMoviesProps {
   movie: Movie;
+}
+export interface SimilarMovieProps {
+  similar: Movie[];
 }
 export interface Genre {
   id: number;
