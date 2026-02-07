@@ -18,6 +18,8 @@ export interface Movie {
   production_countries?: ProductionCountry[];
   spoken_languages?: SpokenLanguage[];
 }
+export type WatchLaterMovie = Movie;
+
 export interface SearchMoviesResponse {
   results: Movie[];
 }

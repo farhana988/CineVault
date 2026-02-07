@@ -29,7 +29,15 @@ export const useWatchLaterMovies = () => {
   }, [loadMovies]);
 
   const toggleMovie = (movie: MovieCardProps) => {
-    const added = toggleWatchLaterMovie(movie);
+    const movieToSave: Movie = {
+      id: movie.id,
+      title: movie.title,
+      poster_path: movie.posterPath,
+      release_date: movie.releaseDate || "",
+      vote_average: movie.rating,
+    };
+
+    const added = toggleWatchLaterMovie(movieToSave);
     loadMovies();
 
     toast.success(

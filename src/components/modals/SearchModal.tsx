@@ -60,15 +60,9 @@ export default function SearchModal({ open, onOpenChange }: SearchModalProps) {
               className="pl-10"
             />
           </div>
-          <button onClick={handleSearch} disabled={loading}>
-            <GradientButton>
-              {loading ? (
-                <Loader2 className="w-4 h-4 animate-spin " />
-              ) : (
-                "Search"
-              )}
-            </GradientButton>
-          </button>
+          <GradientButton onClick={handleSearch} disabled={loading}>
+            {loading ? <Loader2 className="w-4 h-4 animate-spin" /> : "Search"}
+          </GradientButton>
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4 min-h-screen">

@@ -4,6 +4,13 @@ import RecentlyViewedTracker from "@/components/modules/RecentlyViewed/RecentlyV
 import { tmdbFetch } from "@/lib/tmdb";
 import { Movie, MovieProps } from "@/types/movie.type";
 
+export const generateStaticParams = async () => {
+  const topMovies = await tmdbFetch<{ results: Movie[] }>("/movie/top_rated");
+  return topMovies.results.slice(0, 15).map((movie) => ({
+    id: String(movie.id),
+  }));
+};
+
 const MovieDetailsPage = async ({
   params,
 }: {

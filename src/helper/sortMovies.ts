@@ -6,8 +6,8 @@ export const sortMovies = (
   order: SortOrder,
 ): Movie[] => {
   return [...movies].sort((a, b) => {
-    let valueA: any;
-    let valueB: any;
+    let valueA: number | string;
+    let valueB: number | string;
 
     switch (sortBy) {
       case "release_date":

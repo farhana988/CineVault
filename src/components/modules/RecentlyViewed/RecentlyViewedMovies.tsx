@@ -1,12 +1,20 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Movie } from "@/types/movie.type";
 import { getRecentlyViewedMovies } from "@/helper/getRecentlyViewedMovies";
 import MovieCard from "@/components/cards/MovieCard";
 
 const RecentlyViewedMovies = () => {
-  const [movies] = useState<Movie[]>(() => getRecentlyViewedMovies());
+  const [movies, setMovies] = useState<Movie[]>([]);
+
+  useEffect(() => {
+    setTimeout(() => {
+      const savedMovies = getRecentlyViewedMovies();
+      setMovies(savedMovies);
+    }, 0);
+  }, []);
+
   return (
     <div>
       {movies.length === 0 ? (

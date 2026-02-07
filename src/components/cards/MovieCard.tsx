@@ -44,7 +44,7 @@ const MovieCard = ({
               className="absolute inset-0 text-primary fill-primary stroke-primary"
             />
             <span className="relative text-xs font-bold text-black">
-              {rating.toFixed(1)}
+              {rating?.toFixed(1)}
             </span>
           </div>
         </div>

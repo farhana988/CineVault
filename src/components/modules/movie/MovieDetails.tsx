@@ -19,8 +19,9 @@ const MovieDetails = ({ movie }: MovieDetailsProps) => {
     production_countries,
     spoken_languages,
   } = movie;
+
   return (
-    <div className="">
+    <div className="pt-10">
       <div className="grid md:grid-cols-3 gap-6 xl:gap-10  bg-opacity-70 overflow-hidden">
         {/* Poster */}
         <div className="relative">
