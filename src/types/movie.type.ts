@@ -18,6 +18,9 @@ export interface Movie {
   production_countries?: ProductionCountry[];
   spoken_languages?: SpokenLanguage[];
 }
+export interface SearchMoviesResponse {
+  results: Movie[];
+}
 export interface ProductionCountry {
   iso_3166_1: string;
   name: string;
